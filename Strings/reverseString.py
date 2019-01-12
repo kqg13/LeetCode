@@ -1,5 +1,7 @@
 # Easy Problem 344: Reverse String
 
+# Write a function that takes a string as input and returns the string reversed.
+
 
 class Solution:
     def reverseString(self, s):
@@ -8,8 +10,3 @@ class Solution:
         :rtype: str
         """
         return s[::-1]
-
-
-reverse = Solution()
-print(reverse.reverseString("hello"))
-print(reverse.reverseString("A man, a plan, a canal: Panama"))

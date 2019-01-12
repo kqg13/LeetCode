@@ -12,7 +12,7 @@ class Solution:
         :rtype: List[List[int]]
         """
         rows, cols = len(A), len(A[0])
-        ans = [[None] * rows for _ in range(cols)]
+        ans = [[None] * rows for _ in range(cols)]  # The "insight"
         for r, row in enumerate(A):
             for c, val in enumerate(row):
                 ans[c][r] = val
