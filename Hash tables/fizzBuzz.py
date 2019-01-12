@@ -1,4 +1,11 @@
-# Easy Problem 412: Reverse String
+# Easy Problem 412: Fizz Buzz
+
+# Write a program that outputs the string representation of numbers from
+# 1 to n.
+#
+# But for multiples of three it should output “Fizz” instead of the number and
+# for the multiples of five output “Buzz”. For numbers which are multiples of
+# both three and five output “FizzBuzz”.
 
 
 class Solution:
@@ -47,7 +54,3 @@ class NaeiveSolution:
             else:
                 lst.append(str(i))
         return lst
-
-
-fb = Solution()
-print(fb.fizzBuzz(15))
