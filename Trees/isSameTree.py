@@ -1,5 +1,9 @@
 # Easy Problem 100: Same Tree
 
+# Given two binary trees, write a function to check if they are the same or not.
+# Two binary trees are considered the same if they are structurally identical
+# and the nodes have the same value.
+
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -25,14 +29,3 @@ class Solution:
             return False
         return self.isSameTree(p.left, q.left) \
             and self.isSameTree(p.right, q.right)
-
-
-root1 = TreeNode(1)
-root1.left = TreeNode(2)
-root1.right = TreeNode(3)
-
-root2 = TreeNode(1)
-root2.left = TreeNode(2)
-root2.right = TreeNode(3)
-sol = Solution()
-print(sol.isSameTree(root1, root2))

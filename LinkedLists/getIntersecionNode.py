@@ -1,5 +1,8 @@
 # Easy problem 160: Intersection of Two Linked Lists
 
+# Write a program to find the node at which the intersection of two singly
+# linked lists begins.
+
 
 # Definition for singly-linked list.
 class ListNode(object):

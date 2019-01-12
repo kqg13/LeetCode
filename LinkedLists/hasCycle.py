@@ -1,5 +1,7 @@
 # Easy problem 141: Linked List Cycle
 
+# Given a linked list, determine if it has a cycle in it.
+
 
 # Definition for singly-linked list.
 class ListNode(object):
