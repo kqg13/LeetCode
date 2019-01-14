@@ -43,10 +43,10 @@ class Solution:
 
         d = deque([(1, root)])
 
-        while deque:
+        while d:
             height, root = d.popleft()
             children = [root.left, root.right]
             if not any(children):
                 return height
             for child in children:
-                d.append((height+1, child))
+                d.append((height + 1, child))
