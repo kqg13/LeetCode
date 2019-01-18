@@ -33,7 +33,7 @@ class Solution:
         for i in range(K):  # O(KlogK)
             heappush(heap, (-calcdistance(points[i]), points[i]))
 
-        # Maintain heap of size k for remaining points
+        # Maintain heap invariant and k closest for remaining points
         for i in range(K, len(points)):  # O(n-k)
             heappushpop(heap, (-calcdistance(points[i]), points[i]))  # O(logK)
 

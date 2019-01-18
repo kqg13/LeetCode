@@ -39,8 +39,14 @@ class KthLargest:
         :type val: int
         :rtype: int
         """
-        if len(self.nums) < self.k:  # Could be an empty list initially
+        if len(self.nums) < self.k:  # Check capacity
             heappush(self.nums, val)
         else:
             heappushpop(self.nums, val)
         return self.nums[0]
+
+
+k = 1
+nums = []
+obj = KthLargest(k, nums)
+print(obj.add(-3))
