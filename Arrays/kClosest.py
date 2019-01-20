@@ -38,4 +38,4 @@ class Solution:
             heappushpop(heap, (-calcdistance(points[i]), points[i]))  # O(logK)
 
         # Return k items
-        return [point[1] for point in list(nsmallest(K, heap))]  # O(n)
+        return [point[1] for point in nsmallest(K, heap)]  # O(n)

@@ -23,7 +23,6 @@ class Solution:
         pos = 0
 
         for i in range(len(nums)):
-            num = nums[i]
-            if num != 0:
+            if nums[i] != 0:
                 nums[pos], nums[i] = nums[i], nums[pos]
                 pos += 1
