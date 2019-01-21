@@ -29,6 +29,19 @@ class Solution:
 
         return search_rec(0, len(nums) - 1, nums, target)
 
+    # Iterative
+    def search_iter(self, nums, target):
+        low, high = 0, len(nums) - 1
+        while low <= high:
+            mid = (low + high) // 2
+            if nums[mid] < target:
+                low = mid + 1
+            elif nums[mid] > target:
+                high = mid - 1
+            else:
+                return mid
+        return -1
+
     # Using bisect module which assumes list is sorted
     def bisect_search(self, nums, target):
         index = bisect_left(nums, target)
