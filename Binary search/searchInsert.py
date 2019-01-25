@@ -2,7 +2,7 @@
 
 # Given a sorted array and a target value, return the index if the target is
 # found. If not, return index where it would be if it were inserted in order.
-# You may assume no duplicates in the array.e target is target = 'z' and
+# You may assume no duplicates in the array.
 
 
 from bisect import bisect_left
