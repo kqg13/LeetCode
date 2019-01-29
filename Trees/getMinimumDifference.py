@@ -32,8 +32,7 @@ class Solution:
 
         def compute_min():
             for i in range(0, len(self.minvals)-1):
-                if self.minvals[i] is not None and self.minvals[i+1] is not None:
-                    self.min_diff = min(self.min_diff, self.minvals[i+1] - self.minvals[i])
+                self.min_diff = min(self.min_diff, self.minvals[i+1] - self.minvals[i])
             return self.min_diff
 
         self.minvals = inorder_helper(root)
@@ -41,8 +40,7 @@ class Solution:
 
 
 r = TreeNode(1)
-r.left = TreeNode(None)
 r.right = TreeNode(3)
 r.right.left = TreeNode(2)
-r.right.right = TreeNode(None)
 s = Solution()
+print(s.getMinimumDifference(r))

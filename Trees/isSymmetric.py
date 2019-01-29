@@ -36,10 +36,8 @@ class Solution:
 
 root = TreeNode(1)
 root.left = TreeNode(2)
-root.left.left = TreeNode(None)
 root.left.right = TreeNode(3)
 root.right = TreeNode(2)
-root.right.left = TreeNode(None)
 root.right.right = TreeNode(3)
 
 sol = Solution()
