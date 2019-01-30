@@ -21,8 +21,7 @@ class MovingAverage:
         :type size: int
         """
         self.size = size
-        self.lst = []
-        self.d = deque(self.lst, self.size)
+        self.d = deque(maxlen=self.size)
 
     def next(self, val):
         """

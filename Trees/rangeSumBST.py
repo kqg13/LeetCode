@@ -42,6 +42,8 @@ class Solution:
         return get_sum()
 
     def rangeSumBSTdfs(self, root, L, R):
+        self.ans = 0
+
         def dfs(node):
             if node:
                 if L <= node.val <= R:
@@ -51,7 +53,6 @@ class Solution:
                 if node.val < R:
                     dfs(node.right)
 
-        self.ans = 0
         dfs(root)
         return self.ans
 
