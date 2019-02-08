@@ -20,10 +20,10 @@ class Solution:
         divider, pivot = low, high
 
         for i in range(low, high):
-            if arr[i] < arr[divider]:
-                arr[divider], arr[i] = arr[i], arr[divider]
+            if arr[i] < arr[pivot]:
+                arr[i], arr[divider] = arr[divider], arr[i]
                 divider += 1
-            arr[pivot], arr[divider] = arr[divider], arr[pivot]
+        arr[pivot], arr[divider] = arr[divider], arr[pivot]
         return divider
 
     def findKthLargest(self, nums, k):
@@ -42,3 +42,8 @@ class Solution:
                 low = p + 1
             else:
                 high = p - 1
+
+
+s = Solution()
+nums = [3, 2, 1, 5, 6, 4]
+print(s.findKthLargest(nums, 2))
