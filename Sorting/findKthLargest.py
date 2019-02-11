@@ -42,8 +42,3 @@ class Solution:
                 low = p + 1
             else:
                 high = p - 1
-
-
-s = Solution()
-nums = [3, 2, 1, 5, 6, 4]
-print(s.findKthLargest(nums, 2))
