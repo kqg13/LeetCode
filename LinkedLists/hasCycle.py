@@ -16,15 +16,13 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        if not head or not head.next:
-            return False
+        if not head or not head.next: return False
 
         slow = head
-        fast = head.next
+        fast = head
 
-        while slow is not fast:
-            if not fast or not fast.next:
-                return False
+        while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-        return True
+            if slow is fast: return True
+        return False

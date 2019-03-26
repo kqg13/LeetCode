@@ -30,28 +30,6 @@ class Solution:
         root.left = right
         root.right = left
         return root
-        # def _change_links(node):
-        #     if node:
-        #         _change_links(node.left)
-        #         _change_links(node.right)
-        #         if node.left and node.right:
-        #             temp = TreeNode(node.left)
-        #             node.left = node.right
-        #             node.right = temp
-        #             self.new_tree = node
-        #         elif node.left and not node.right:
-        #             node.right = node.left
-        #             node.left = None
-        #             self.new_tree = node
-        #         elif node.right and not node.left:
-        #             node.left = node.right
-        #             node.right = None
-        #             self.new_tree = None
-        #
-        # self.ans = self.new_tree = TreeNode(root.val)
-        # _change_links(root)
-        # return self.ans
-
 
 # Test
 s = Solution()
@@ -61,4 +39,3 @@ r.left.left = TreeNode(1)
 r.left.right = TreeNode(3)
 r.right = TreeNode(7)
 print(s.invertTree(r))
-print(4589.16 - 2040.46)
