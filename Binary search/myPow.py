@@ -30,4 +30,4 @@ class Solution:
 
 
 s = Solution()
-print(s.myPow(2.1, 3))
+print(s.myPow(2, 10))

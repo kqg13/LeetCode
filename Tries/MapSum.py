@@ -37,6 +37,13 @@ class MapSum:
         return current.val
 
 
+obj = MapSum()
+obj.insert("apple", 3)
+obj.insert("app", 2)
+obj.insert("api", 10)
+obj.insert("apin", 4)
+print(obj.sum("api"))
+
 # Your MapSum object will be instantiated and called as such:
 # obj = MapSum()
 # obj.insert(key, val)

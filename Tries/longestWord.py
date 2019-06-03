@@ -70,6 +70,6 @@ words1 = ["w", "wo", "wor", "worl", "world"]
 words2 = ["a", "banana", "app", "appl", "ap", "apply", "apple"]
 words3 = ["m", "mo", "moc", "moch", "mocha", "l", "la", "lat", "latt", "latte", "c", "ca", "cat"]
 words4 = ["worl", "world"]
-print(s.longestWordBruteForce(words4))
+print(s.longestWordBruteForce(words3))
 t = Trie()
-print(t.longestWord(words1))
+print(t.longestWord(words3))
