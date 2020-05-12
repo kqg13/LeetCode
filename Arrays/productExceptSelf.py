@@ -20,11 +20,20 @@ class Solution:
         for i in range(len(nums)):
             results[i] = results[i] * prod
             prod = prod * nums[i]
+            print(prod, results[i])
+
+        print(results)
 
         # Reset running product  and loop backwards
         prod = 1
         for i in range(len(nums)-1, -1, -1):
             results[i] = results[i] * prod
             prod = prod * nums[i]
+            print(prod, results[i])
 
         return results
+
+
+s = Solution().productExceptSelf([2, 3, 1, 5])
+print(s)
+

@@ -29,32 +29,27 @@ class Solution:
         :param inorder: List[int]
         :return: TreeNode
         """
-        self.in_dict = {val: i for i, val in enumerate(inorder)}
-        pre_start, in_start = 0, 0
-        pre_end, in_end = len(preorder) - 1, len(inorder) - 1
+        if not preorder and not inorder:
+            return None
+        pre_length, in_length, rootval = len(preorder), len(inorder), preorder[0]
 
-        def tree_helper(pre_start, pre_end, preorder, in_start, in_end, inorder):
-            if pre_start > pre_end or in_start > in_end: return
+        if pre_length == 1 and in_length == 1:
+            leaf = TreeNode(rootval)
+            return leaf
 
-            root = TreeNode(preorder[pre_start])
-            # Find root index
-            root_index = self.in_dict[root.val]
+        rootval_idx = inorder.index(rootval)
+        inorder_left, inorder_right = inorder[0:rootval_idx], inorder[rootval_idx + 1:in_length]
+        preorder_left, preorder_right = preorder[1:rootval_idx+1], preorder[rootval_idx+1:pre_length]
 
-            root.left = tree_helper(pre_start + 1, pre_start + root_index, preorder,
-                                    in_start, root_index - 1, inorder)
-
-            root.right = tree_helper(pre_start+(root_index - in_start) + 1, pre_end, preorder,
-                                     root_index + 1, in_end, inorder)
-
-            return root
-
-        return tree_helper(pre_start, pre_end, preorder, in_start, in_end, inorder)
+        # Construct a new TreeNode
+        root = TreeNode(rootval)
+        root.left = self.buildTree(preorder_left, inorder_left)
+        root.right = self.buildTree(preorder_right, inorder_right)
+        return root
 
 
 # Test
 s = Solution()
-# pre_order = [3, 9, 20, 15, 7]
-# in_order = [9, 3, 15, 20, 7]
-pre_order = [1, 2, 3]
-in_order = [2, 3, 1]
+pre_order = [3, 9, 20, 15, 7]
+in_order = [9, 3, 15, 20, 7]
 print(s.buildTree(pre_order, in_order))

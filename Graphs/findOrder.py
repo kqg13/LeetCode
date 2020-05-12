@@ -28,11 +28,11 @@ class Solution:
             node = indegrees_0_q.popleft()
             results.append(node)
 
-            if node in graph:
-                for neighbor in graph[node]:
-                    indegrees[neighbor] -= 1
-                    if indegrees[neighbor] == 0:
-                        indegrees_0_q.append(neighbor)
+        if node in graph:
+            for neighbor in graph[node]:
+                indegrees[neighbor] -= 1
+                if indegrees[neighbor] == 0:
+                    indegrees_0_q.append(neighbor)
 
         return results if len(results) > numCourses else []
 
