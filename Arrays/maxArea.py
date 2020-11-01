@@ -14,18 +14,15 @@ class Solution:
         :param height: List[int])
         :return: int
         """
-        prev = 0
-        end = len(height) - 1
-        max_area = 0
-        while prev != end:
-            min_height = min(height[prev], height[end])
-            curr_area = (end - prev) * min_height
-            if height[end] > height[prev]:
-                prev += 1
+        low, high, bestArea = 0, len(height) - 1, 0
+        while low < high:
+            minHeight = min(height[low], height[high])
+            bestArea = max(bestArea, (high - low) * minHeight)
+            if height[low] < height[high]:
+                low += 1
             else:
-                end -= 1
-            max_area = max(max_area, curr_area )
-        return max_area
+                high -= 1
+        return bestArea
 
 
 s = Solution()

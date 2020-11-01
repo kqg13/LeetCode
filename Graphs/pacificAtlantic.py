@@ -79,4 +79,4 @@ matrix2 = [[1, 2],
            [4, 3]]
 s = Solution()
 print(s.pacificAtlantic(matrix))
-print(s.pacificAtlantic(matrix2))
+# print(s.pacificAtlantic(matrix2))

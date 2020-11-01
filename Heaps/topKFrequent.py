@@ -18,4 +18,14 @@ class Solution:
         """
         # O(NlogK)
         count = Counter(nums)  # Creates dictionary in O(N)
+        print(count)
         return nlargest(k, count.keys(), key=lambda x: count[x])  # O(NlogK), note: key=get also works
+
+
+nums1 = [1, 1, 1, 2, 2, 3]
+k1 = 2
+print(Solution().topKFrequent(nums1, k1))
+
+# closed mouths don't get fed
+# compromising safety
+

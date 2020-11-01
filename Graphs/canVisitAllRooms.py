@@ -1,4 +1,4 @@
-# Graph Problem 133: Keys and Rooms
+# Graph Problem 841: Keys and Rooms
 
 
 class Solution:
@@ -14,6 +14,6 @@ class Solution:
                 self.dfs(rooms, room, visited)
 
 
-rooms = [[1,3],[3,0,1],[2],[0]]
+rooms = [[1, 3], [3, 0, 1], [2], [0]]
 s = Solution()
 print(s.canVisitAllRooms(rooms))
