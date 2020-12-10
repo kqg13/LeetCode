@@ -15,17 +15,18 @@
 
 class Solution:
     def countVowelStrings(self, n: int) -> int:
-        self.result = 0
-        self.vowelHelper(n, 1)
-        return self.result
+        self.results = 0
+        self.vowelsHelper(n, 1)
+        return self.results
 
-    def vowelHelper(self, n, lastChar):
+    def vowelsHelper(self, n, letter):
         if n == 0:
-            return 1
-        self.result = 0
-        for i in range(lastChar, 6):
-            self.result += self.vowelHelper(n - 1, i)
-        return self.result
+            self.results += 1
+            return
+
+        for i in range(1, 6):
+            if i >= letter:
+                self.vowelsHelper(n - 1, i)
 
 
 s = Solution()

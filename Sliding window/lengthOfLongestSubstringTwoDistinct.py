@@ -33,9 +33,8 @@ class Solution(object):
         return best
 
 
-# key_index = list(my_dictionary).index(the_key) if the_key in my_dictionary else None
-
 s = Solution()
-s1, s2 = "eceba", "ccaabbb"
+s1, s2, s3 = "eceba", "ccaabbb", "accbbca"
 print(s.lengthOfLongestSubstringTwoDistinct(s1))
 print(s.lengthOfLongestSubstringTwoDistinct(s2))
+print(s.lengthOfLongestSubstringTwoDistinct(s3))
