@@ -28,5 +28,5 @@ class Solution:
 s = Solution()
 nums1, nums2, nums3 = [1, 2, 3], [0, 1], [1]
 print(s.permute(nums1))
-print(s.permute(nums2))
-print(s.permute(nums3))
+# print(s.permute(nums2))
+# print(s.permute(nums3))

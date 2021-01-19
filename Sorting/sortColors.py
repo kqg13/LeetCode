@@ -9,7 +9,7 @@
 # Input: nums1 = [2, 0, 2, 1, 1, 0] --> [0, 0, 1, 1, 2, 2]
 # Input: nums2 = [2, 0, 1] --> [0, 1, 2]
 
-
+# Ivariants: anything < low are 0s, anything > high are all 2s and anything b/w low and high have not yet been seen
 class Solution:
     def sortColors(self, nums):
         """

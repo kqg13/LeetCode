@@ -22,6 +22,7 @@
 
 # Time: O(2^N * N) # Space: O(2^N * N); stack space: O(N)
 class Solution:
+    # noinspection PyPep8Naming
     def allPathsSourceTarget(self, graph: list) -> list:
         self.results, currentPath = [], []
         self.n = len(graph) - 1
@@ -30,6 +31,7 @@ class Solution:
         print(self.results)
         return self.results
 
+    # noinspection PyPep8Naming
     def dfs(self, graph, currentPath, node):
         if node == self.n:
             self.results.append(currentPath.copy())
