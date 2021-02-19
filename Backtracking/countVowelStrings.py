@@ -28,6 +28,22 @@ class Solution:
             if i >= letter:
                 self.vowelsHelper(n - 1, i)
 
+    def countVowelStringsReview(self, n: int) -> int:
+        self.results, self.nVowels = 0, 5
+        if n == 1: return self.nVowels
+        self.vowelsHelperReview(n, 0, 0)
+        return self.results
+
+    def vowelsHelperReview(self, n, letter, level):
+        if n == level:
+            self.results += 1
+            return
+        for i in range(self.nVowels):
+            if i >= letter:
+                self.vowelsHelperReview(n, i, level + 1)
+
 
 s = Solution()
-print(s.countVowelStrings(3))
+n = 3
+print(s.countVowelStrings(n))
+print(s.countVowelStringsReview(n))

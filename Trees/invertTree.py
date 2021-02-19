@@ -31,6 +31,7 @@ class Solution:
         root.right = left
         return root
 
+
 # Test
 s = Solution()
 r = TreeNode(4)
