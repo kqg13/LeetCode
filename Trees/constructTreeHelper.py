@@ -42,8 +42,10 @@ def createTree(inputTree):
         valsQ.append(inputTree[i])
 
     while valsQ:
-        leftVal = valsQ.pop(0)
-        rightVal = valsQ.pop(0)
+        if valsQ:
+            leftVal = valsQ.pop(0)
+        if valsQ:
+            rightVal = valsQ.pop(0)
 
         current = nodesQ.pop(0)
 
@@ -61,3 +63,5 @@ def createTree(inputTree):
 root = [3, 9, 20, None, None, 15, 7]
 tree = constructTree(root, 0, len(root))
 print(tree.val, tree.left.val, tree.right.val, tree.right.left.val, tree.right.right.val)
+root2 = [3, 1, 4, None, None, 2]
+tree2 = createTree(root2)
