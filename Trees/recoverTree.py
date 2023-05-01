@@ -69,6 +69,54 @@ class Solution:
                     second = i
         return first, second
 
+    def recoverTreeMorrisOrder(self, root) -> None:
+        """
+        Do not return anything, modify root in-place instead.
+        """
+        self.morrisInorderTraversal(root)
+
+    def morrisInorderTraversal(self, root):
+        """
+        Do not modify original tree
+        """
+        current = root
+        first = second = pred = None
+        while current is not None:
+            if current.left is None:
+                # check here for violation
+                if pred is not None and current.val < pred.val:
+                    second = current
+                    if first is None:
+                        first = pred
+                pred = current
+
+                current = current.right
+            else:
+                rightmost = current.left
+                rightmost = self.getRightMost(rightmost, current)
+                # Link successor if not already connected
+                if rightmost.right is None:
+                    rightmost.right = current
+                    current = current.left
+                else:
+                    # check here for violation
+                    if pred is not None and current.val < pred.val:
+                        second = current
+                        if first is None:
+                            first = pred
+                    pred = current
+
+                    # Reset the link to avoid modifying the tree
+                    rightmost.right = None
+                    current = current.right
+        # Swap
+        first.val, second.val = second.val, first.val
+
+    def getRightMost(self, node, current):
+        while node.right is not None and node.right != current:
+            node = node.right
+        return node
+
 
 t1 = [1, 3, None, None, 2]
 root1 = createTree(t1)
@@ -78,6 +126,8 @@ t3 = [13, 6, 20, None, 7, 8, 25]
 root3 = createTree(t3)
 
 s = Solution()
-s.recoverTree(root1)
-s.recoverTree(root2)
-s.recoverTree(root3)
+# s.recoverTree(root1)
+s.recoverTreeMorrisOrder(root1)
+
+# s.recoverTree(root2)
+s.recoverTreeMorrisOrder(root2)
