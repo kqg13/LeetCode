@@ -1,5 +1,15 @@
 # 91: Recover Tree
 # https://leetcode.com/problems/recover-binary-search-tree/
+# Explanation of Morris Order Algorithm
+# https://karthikshettyks26.hashnode.dev/morris-traversal
+# https://stackoverflow.com/questions/5502916/explain-morris-inorder-tree-traversal-without-using-stacks-or-recursion
+
+# Notes:
+# A binary tree is threaded by making all right child pointers that would normally be null point to the inorder
+# successor of the node (if it exists), and all left child pointers that would normally be null point to the Inorder
+# predecessor of the node.
+# right - successor
+# left - predecessor
 
 # Definition for a binary tree node.
 class TreeNode:
