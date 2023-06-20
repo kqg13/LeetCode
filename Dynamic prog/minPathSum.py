@@ -4,7 +4,7 @@
 class Solution:
     def minPathSum(self, grid) -> int:
         """
-        grid: List[List[int]
+        grid: List[List[int]]
         return: int
         """
         self.matrix = grid.copy()
@@ -15,7 +15,6 @@ class Solution:
                 best = min(grid[i-1][j], grid[i][j-1])
                 self.matrix[i][j] = grid[i][j] + best
         bottomRight = self.matrix[nRows-1][nCols-1]
-        print(bottomRight)
         return bottomRight
 
     def setFirstRowAndCol(self, grid, nRows, nCols):
