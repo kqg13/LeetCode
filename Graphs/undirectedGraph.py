@@ -14,6 +14,7 @@ class UndirectedGraph(object):
         self.graph = defaultdict(list, {v: [] for v in range(self.n)})
         self.visited = [False] * self.n
         self.buildGraph()
+        print(self.graph)
 
     def buildGraph(self):
         for v, w in self.edges:
@@ -51,9 +52,9 @@ class UndirectedGraph(object):
 
 
 n1, edges1 = 5, [[0, 1], [1, 2], [2, 3], [3, 4]]
-n2, edges2 = 5, [[0, 1], [1, 2]]
+n2, edges2 = 3, [[0, 1], [1, 2]]
 n3, edges3 = 5, []
-n4, edges4 = 5, [[0, 1], [0, 2], [0, 3], [1, 0], [1, 2], [2, 0], [2, 1], [3, 0], [3, 4], [4, 3]]
+n4, edges4 = 5, [[0, 1], [0, 2], [0, 3], [3, 4]]
 ug = UndirectedGraph(n4, edges4)
 # ug.addEdge(1, 0)
 # ug.addEdge(1, 2)
