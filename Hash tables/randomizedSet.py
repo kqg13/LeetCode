@@ -19,6 +19,7 @@ class RandomizedSet:
 
     def remove(self, val: int) -> bool:
         if val not in self.val_to_index: return False
+        # Key idea: swap the element to delete with the last one; delete the last one
         index_to_remove = self.val_to_index[val]
         val_to_move = self.index_to_val[self.n]
         self.val_to_index[val_to_move] = index_to_remove
