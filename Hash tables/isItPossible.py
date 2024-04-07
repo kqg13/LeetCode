@@ -8,8 +8,10 @@ class Solution:
     def isItPossible(self, word1: str, word2: str) -> bool:
         d1, d2 = Counter(word1), Counter(word2)
         n1, n2 = len(d1), len(d2)
-        if abs(n2 - n1) > 2:
-            return False
+
+        # Impossible to equalize
+        if abs(n2 - n1) > 2: return False
+
         for k1 in d1.keys():
             for k2 in d2.keys():
                 d1_c = d1.copy()
@@ -28,10 +30,8 @@ class Solution:
                 d1_c[k1] -= 1
                 d2_c[k2] -= 1
 
-                if d1_c[k1] == 0:
-                    del d1_c[k1]
-                if d2_c[k2] == 0:
-                    del d2_c[k2]
+                if d1_c[k1] == 0: del d1_c[k1]
+                if d2_c[k2] == 0: del d2_c[k2]
 
                 if len(d1_c) == len(d2_c):
                     return True
@@ -41,5 +41,3 @@ class Solution:
 s = Solution()
 word1, word2 = "ac", "b"
 word3, word4 = "abcc", "aab"
-print(s.isItPossible(word1, word2))
-print(s.isItPossible(word3, word4))
