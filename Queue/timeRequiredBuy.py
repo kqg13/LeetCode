@@ -1,5 +1,6 @@
 # 2073: Time Needed to Buy Tickets
 # https://leetcode.com/problems/time-needed-to-buy-tickets/
+# Explanation: https://www.youtube.com/watch?v=cVmS9N6kf2Y
 
 class Solution:
     def timeRequiredToBuy(self, tickets, k):
