@@ -60,8 +60,10 @@ def createTree(inputTree):
     return root
 
 
-root = [3, 9, 20, None, None, 15, 7]
-tree = constructTree(root, 0, len(root))
-print(tree.val, tree.left.val, tree.right.val, tree.right.left.val, tree.right.right.val)
-root2 = [3, 1, 4, None, None, 2]
-tree2 = createTree(root2)
+# root = [3, 9, 20, None, None, 15, 7]
+# tree = constructTree(root, 0, len(root))
+# print(tree.val, tree.left.val, tree.right.val, tree.right.left.val, tree.right.right.val)
+# root2 = [3, 1, 4, None, None, 2]
+# tree2 = createTree(root2)
+# print(tree2.right.left.val)
+
