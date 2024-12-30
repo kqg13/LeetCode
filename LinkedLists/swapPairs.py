@@ -23,7 +23,27 @@ class ListNode(object):
 
 class Solution(object):
     def swapPairs(self, head):
-        pass
+        prev = head
+        curr = head.next if prev else None
+
+        if prev and curr:
+            head = curr
+
+        temp_head = None
+
+        while prev and prev.next:
+            prev.next = curr.next
+            curr.next = prev
+
+            if temp_head is not None:
+                temp_head.next = curr
+
+            temp_head = prev
+
+            prev = prev.next
+            curr = prev.next if prev else None
+
+        return head
 
 
 s = Solution()
