@@ -12,6 +12,7 @@ from collections import defaultdict
 
 # Time: O(2N), Space: O(1)
 class Solution(object):
+    # August 2020
     def lengthOfLongestSubstringTwoDistinct(self, s):
         """
         :type s: str
@@ -32,9 +33,21 @@ class Solution(object):
                 best = max(best, sum(theDict.values()))
         return best
 
+    # April 2025
+    def lengthOfLongestSubstringTwoDistinctRevisited(self, s):
+        left = result = 0
+        freqs = defaultdict(lambda: 0)
+        for right, char in enumerate(s):
+            freqs[char] += 1
+            while len(freqs) > 2:
+                left_char = s[left]
+                freqs[left_char] -= 1
+                if freqs[left_char] == 0:
+                    del freqs[left_char]
+                left += 1
+            result = max(right - left + 1, result)
+        return result
+
 
 s = Solution()
 s1, s2, s3 = "eceba", "ccaabbb", "accbbca"
-print(s.lengthOfLongestSubstringTwoDistinct(s1))
-print(s.lengthOfLongestSubstringTwoDistinct(s2))
-print(s.lengthOfLongestSubstringTwoDistinct(s3))
